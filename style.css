@@ -1,0 +1,220 @@
+:root {
+    --previous-text: #d9d9d9;
+    --background-light: #e1e8f8;
+    --background-azul: #444444;
+    --background-calculadora: #2d2f2f;
+    --border-bottom-current-text: #d9d9d9;
+    --color-button: #eeeeee;
+    --igual-button: #1b5096;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: var(--background-azul);
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+}
+
+.luz-de-fundo {
+    background-color: var(--background-light);
+    position: fixed;
+    width: 100%;
+    height: 200px;
+    z-index: -1;
+}
+
+.container {
+    margin-top: 64px;
+    border-radius: 10px;
+    padding: 30px 20px;
+    background-color: var(--background-calculadora);
+    box-shadow: 5px 5px 20px #2d2f2f;
+}
+
+.tela-calculadora-container-atual {
+    height: 100px;
+    display: flex;
+    justify-content: end;
+    max-width: 350px;
+}
+
+.tela-calculadora-atual {
+    display: inline;
+    border-bottom: 2px solid var(--border-bottom-current-text);
+    color: var(--color-button);
+    font-size: 64px;
+    overflow: auto;
+}
+
+.tela-calculadora-atual::-webkit-scrollbar {
+    color: transparent;
+}
+
+.linha-teclado {
+    display: flex;
+}
+
+.botão {
+    background-color: var(--background-calculadora);
+    border: none;
+    color: var(--color-button);
+    width: 88px;
+    height: 88px;
+    font-size: 24px;
+    font-weight: regular;
+    border-radius: 10px;
+
+}
+
+.botão-igual {
+    background-color: var(--igual-button);
+    border: none;
+    color: var(--color-button);
+    width: 170px;
+    height: 88px;
+    font-size: 24px;
+    border-radius: 10px;
+}
+
+.botão:hover {
+    filter: brightness(150%);
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.botão-igual:hover {
+    filter: brightness(150%);
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.tela-calculadora-anterior {
+    text-align: right;
+    height: 20px;
+    color: var(--previous-text);
+}
+.interruptor{
+    width:180px;
+    height:50px;
+    top: 5px;
+    left: 40px;
+    margin:0 auto;
+    position:absolute;
+ 
+}
+ 
+.interruptor input{
+    display:block;
+    width:100%;
+    height: 100%;
+ 
+    position:absolute;
+    top:0;
+    left:0;
+    z-index: 10;
+ 
+    opacity: 0;
+    cursor: pointer;
+ 
+}
+ 
+.interruptor label{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: -moz-linear-gradient(#750000, #B20000);
+    background: -ms-linear-gradient(#750000, #B20000);
+    background: -o-linear-gradient(#750000, #B20000);
+    background: -webkit-linear-gradient(#750000, #B20000);
+    background: linear-gradient(#750000, #B20000);
+    border-radius: 40px;
+}
+ 
+.interruptor label:after{
+    content: ""; 
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    bottom: -10px;
+    left: -10px;
+    z-index: -1; 
+    background: -moz-linear-gradient(#EEEEEE, #AAAAAA);
+    background: -ms-linear-gradient(#EEEEEE, #AAAAAA);
+    background: -o-linear-gradient(#EEEEEE, #AAAAAA);
+    background: -webkit-linear-gradient(#EEEEEE, #AAAAAA);
+    background: linear-gradient(#EEEEEE, #AAAAAA);
+    border-radius: inherit;
+ 
+}
+ 
+.interruptor label span{
+    display: block;
+    width: 60%;
+    height: 100%;
+    background: #C0C0C0; 
+    position: absolute;
+    z-index: 2;
+    right: 41%;
+    top: 0; 
+    background: -moz-linear-gradient(#E0E0E0, #A0A0A0);
+    background: -ms-linear-gradient(#E0E0E0, #A0A0A0);
+    background: -o-linear-gradient(#E0E0E0, #A0A0A0);
+    background: -webkit-linear-gradient(#E0E0E0, #A0A0A0);
+    background: linear-gradient(#E0E0E0, #A0A0A0); 
+    border-radius: inherit;
+ 
+}
+ 
+.interruptor label span:after {
+    content: ""; 
+    position: absolute;
+    left: 15%;
+    top: 25%; 
+    width: 70%;
+    height: 50%; 
+    background: -moz-linear-gradient(#F7F7F7, #CCCCCC);
+    background: -ms-linear-gradient(#F7F7F7, #CCCCCC);
+    background: -o-linear-gradient(#F7F7F7, #CCCCCC);
+    background: -webkit-linear-gradient(#F7F7F7, #CCCCCC);
+    background: linear-gradient(#F7F7F7, #CCCCCC);
+    border-radius: inherit;
+}
+ 
+.interruptor label span:before {
+    content: "off"; 
+    position: absolute;
+    top: 50%;
+    margin-top: -12px;
+    right: -50%; 
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    font-size: 24px; 
+    color: #fff;
+ 
+}
+ 
+.interruptor input:checked ~ label {
+ 
+    background: -moz-linear-gradient(#004010, #1A6600);
+    background: -ms-linear-gradient(#004010, #1A6600);
+    background: -o-linear-gradient(#004010, #1A6600);
+    background: -webkit-linear-gradient(#004010, #1A6600);
+    background: linear-gradient(#004010, #1A6600);
+}
+ 
+.interruptor input:checked ~ label span{
+    right: -2px;
+}
+ 
+.interruptor input:checked ~ label span:before {
+    content: "on";
+    right: 115%;
+ 
+}
